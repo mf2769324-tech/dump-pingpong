@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Texture2D" uid="uid://b4liwh2fe66nf" path="res://Untitled.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://ckxcuxnmb6dko" path="res://character_body_2d.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://u41sw1u4od8h" path="res://character_body_2d_2.gd" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://dg4giilji72r" path="res://Untitled2-removebg-preview.png" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://bh637vfdwismv" path="res://ball.gd" id="4_q6r6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(48.541664, 113.42592)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6r6c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q6r6c"]
+distance = 4.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1157.0
+offset_bottom = 642.0
+color = Color(0, 0, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-2, 2)
+script = ExtResource("1_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(23.699999, 60.750004)
+scale = Vector2(0.96, 1.08)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(23.03751, 60.499992)
+scale = Vector2(0.06906013, 0.18364197)
+texture = ExtResource("1_0e48y")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(1103, -1)
+script = ExtResource("3_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(26, 60)
+scale = Vector2(0.96, 1.08)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+position = Vector2(25.999947, 60)
+scale = Vector2(0.0691728, 0.18613581)
+texture = ExtResource("1_0e48y")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
+position = Vector2(530, 330)
+script = ExtResource("4_q6r6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3"]
+scale = Vector2(2.1599998, 2.2)
+shape = SubResource("CircleShape2D_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D3"]
+position = Vector2(9, 9)
+scale = Vector2(-0.2323088, 0.22435477)
+texture = ExtResource("4_0hol4")
+
+[node name="CharacterBody2D4" type="CharacterBody2D" parent="."]
+position = Vector2(885, 50)
+rotation = -3.1375847
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4"]
+position = Vector2(461, 57)
+scale = Vector2(14.268362, 1.3934828)
+shape = SubResource("WorldBoundaryShape2D_q6r6c")
+
+[node name="CharacterBody2D5" type="CharacterBody2D" parent="."]
+position = Vector2(297, 592)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D5"]
+position = Vector2(461, 57)
+scale = Vector2(14.268362, 1.3934828)
+shape = SubResource("WorldBoundaryShape2D_q6r6c")

@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://bh637vfdwismv" path="res://ball.gd" id="1_kdubu"]
+[ext_resource type="Texture2D" uid="uid://b86ih5vevf5eh" path="res://Background.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://ckxcuxnmb6dko" path="res://character_body_2d.gd" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://b4liwh2fe66nf" path="res://Untitled.png" id="3_0hol4"]
+[ext_resource type="Script" uid="uid://u41sw1u4od8h" path="res://character_body_2d_2.gd" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://dg4giilji72r" path="res://Untitled2-removebg-preview.png" id="5_q6r6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0hol4"]
+normal = Vector2(-0.013957966, -0.99990255)
+distance = -10.975132
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdubu"]
+radius = 27.202942
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(571, 325)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 320)
+scale = Vector2(0.43999755, 0.7200006)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575.75, 320)
+scale = Vector2(3.9696178, 3.925926)
+texture = ExtResource("1_wtcfe")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-550, -266)
+script = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(2.1599994, 5.88)
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+position = Vector2(0.067130566, 1.1904716)
+scale = Vector2(0.030068522, 0.034204923)
+texture = ExtResource("3_0hol4")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(1698, 903)
+script = ExtResource("4_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+scale = Vector2(2.1599994, 5.88)
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2/CollisionShape2D"]
+position = Vector2(0.3379711, -5.9604645e-06)
+scale = Vector2(0.029896464, 0.030397385)
+texture = ExtResource("3_0hol4")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
+position = Vector2(631, 1013)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3"]
+position = Vector2(3, -13)
+scale = Vector2(15.299777, 2.4555736)
+shape = SubResource("WorldBoundaryShape2D_0hol4")
+
+[node name="CharacterBody2D4" type="CharacterBody2D" parent="."]
+position = Vector2(590, -285)
+rotation = -3.13828
+scale = Vector2(1, 0.6401346)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4"]
+position = Vector2(3, -13)
+scale = Vector2(15.299777, 4.335575)
+shape = SubResource("WorldBoundaryShape2D_0hol4")
+
+[node name="ball" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lable")]
+position = Vector2(1732, 390)
+script = ExtResource("1_kdubu")
+lable = NodePath("../Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
+shape = SubResource("CircleShape2D_kdubu")
+
+[node name="Sprite2D" type="Sprite2D" parent="ball"]
+position = Vector2(-10, 11)
+scale = Vector2(0.370334, 0.31466395)
+texture = ExtResource("5_q6r6c")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 468.99997
+offset_top = -295.99997
+offset_right = 508.99997
+offset_bottom = -272.99997
+scale = Vector2(6.737704, 2.289183)
