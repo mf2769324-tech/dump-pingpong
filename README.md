@@ -1,1 +1,1 @@
-# dump-pingpong
+Dump PNGPong** is a fast-paced, casual pong-style game where players bounce a pixel-perfect ball back and forth, aiming to outscore their opponent. With simple controls and vibrant retro graphics, Dump PNGPong brings the classic arcade feel with a modern twist. Perfect for quick fun sessions or competitive matches, this game challenges your reflexes and timing in an addictive, minimalist setting.
